@@ -532,9 +532,47 @@
     .info-strip { grid-template-columns: 1fr; }
     .input-card, .bar-section, .result-hero, .share-card { padding: 20px; }
   }
+
+
+/* ── Government Logos ── */
+.gov-logos {
+  position: absolute; /* 배경 위에 띄우기 */
+  top: 30px;          /* 상단 여백 */
+  left: 30px;         /* 좌측 여백 */
+  z-index: 10;
+}
+
+.logo-item img {
+  height: 40px;       /* 로고 높이를 40px로 고정 (원하는 대로 조절하세요) */
+  width: auto;        /* 가로 비율 자동 유지 */
+  display: block;
+  mix-blend-mode: screen; /* 이미지의 검은색 배경을 투명하게 처리 (필요시) */
+  filter: brightness(1.2); /* 어두운 배경에서 좀 더 밝게 보이도록 조절 */
+  opacity: 0.8;       /* 너무 튀지 않게 살짝 투명도 적용 */
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 600px) {
+  .gov-logos {
+    position: relative; /* 모바일에선 중앙으로 */
+    top: 20px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -40px;
+  }
+  .logo-item img {
+    height: 30px; /* 모바일에선 더 작게 */
+  }
+}
 </style>
 </head>
 <body>
+<div class="gov-logos">
+  <div class="logo-item">
+    <img src="국토부.png" alt="국토교통부">
+  </div>
+</div>
 <div class="container">
 
   <header>
